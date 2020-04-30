@@ -1,6 +1,6 @@
 # Environment setup
 
-This is a skeleton that combines `pyenv` and `pipenv` to create a Python development environment. It can be used to start a new project quickly.
+This is a skeleton that combines `pyenv`, `pipenv` and `virtualenv` to create a Python development environment. It can be used to start a new project quickly.
 
 ## Dependencies
 
