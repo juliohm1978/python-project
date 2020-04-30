@@ -61,6 +61,8 @@ While working in your project inside the virtual environment, you can install de
 Once you have all dependencies installed and updated, you can lock them and create `requirements.txt` using:
 
     make __requirements
+    
+The example `Dockerfile` uses that `requirements.txt` to install the dependencies inside the image.
 
 ## Reset the environment
 
