@@ -52,6 +52,16 @@ You can start a shell into the virtual environment by using `pipenv` as usual.
 
     pipenv shell
 
+## In-project depdendencies
+
+While working in your project inside the virtual environment, you can install dependencies with `pipenv` to keep them managed.
+
+    pipenv install <dependency_name>
+
+Once you have all dependencies installed and updated, you can lock them and create `requirements.txt` using:
+
+    make __requirements
+
 ## Reset the environment
 
 You can delete the virtual environment using:
