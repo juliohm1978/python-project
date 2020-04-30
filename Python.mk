@@ -6,9 +6,10 @@ __init:
 
 __reset:
 	-pipenv --rm
-	rm -fr Pipfile Pipfile.lock
 	rm -fr .python-version
-	rm -fr .env
+
+__hardreset: reset
+	rm -fr Pipfile Pipfile.lock
 
 __shell:
 	pipenv shell
