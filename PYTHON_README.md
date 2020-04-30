@@ -54,8 +54,12 @@ You can start a shell into the virtual environment by using `pipenv` as usual.
 
 ## Reset the environment
 
-You can delete the entire virtual environment using:
+You can delete the virtual environment using:
 
     make __reset
 
-**WARNING**: This should only be used as a last resort to fix a corrupted environment. Be aware this will remove `.venv`, along all dependency definitions, such as `Pipfile`, `Pipfile.lock` and `.env`. That means, all your dependencies and most of your configuration will be lost. Aside from the `.venv` directory, make sure you can recover backups or previous versions of those files.
+This will not delete `Pipfile` and `Pipfile.lock` from your project.
+
+To delete EVERYTHING related to the virtual environment, including `Pipfile` and `Pipfile.lock`, you can:
+
+    make __hardreset
