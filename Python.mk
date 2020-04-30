@@ -5,7 +5,7 @@ __init:
 	echo 'PYTHONPATH=\\${PWD}/src' > .env
 	echo 'VIRTUAL_ENV=\\${PWD}/.venv' >> .env
 	echo 'PIPENV_VENV_IN_PROJECT=true' >> .env
-	PIPENV_VENV_IN_PROJECT=true pipenv --python `pyenv root`/shims/python install
+	virtualenv -p `pyenv root`/shims/python .venv
 
 __reset:
 	-pipenv --rm
