@@ -5,7 +5,7 @@ __init:
 	virtualenv -p `pyenv root`/shims/python .venv
 
 __reset:
-	-pipenv --rm
+	rm -fr .venv
 	rm -fr .python-version
 
 __hardreset: reset
