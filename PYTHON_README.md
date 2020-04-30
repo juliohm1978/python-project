@@ -40,7 +40,7 @@ If the `pyenv` binary cannot be found, add `$HOME/.pyenv/bin` to you `$PATH`.
 
 Edit the provided `Makefile` and define the preferred Python version to use in `PYENV_VERSION`.
 
-Further `make` targets for your project can also be defined here, replacing the dummy `hello` target. The include directive for `Python.mk` will be used mostly in rare cases. Once to initialize the environment and perhaps to reset the entire project environment.
+Further `make` targets for your project can also be defined here, replacing the example targets. The include directive for `Python.mk` will be used mostly in rare cases. Once to initialize the environment and perhaps to reset the entire project environment.
 
     make __init
 
