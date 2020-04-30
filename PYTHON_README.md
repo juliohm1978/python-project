@@ -69,6 +69,9 @@ The example `Dockerfile` uses that `requirements.txt` to install the dependencie
 You can delete the virtual environment using:
 
     make __reset
+    
+    ## Recreate the environment
+    make __init
 
 This will not delete `Pipfile` and `Pipfile.lock` from your project.
 
