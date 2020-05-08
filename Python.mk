@@ -2,17 +2,11 @@ __init:
 	mkdir -p src
 	echo -n $(PYENV_VERSION) > .python-version
 	pyenv install --skip-existing
-	virtualenv -p `pyenv root`/shims/python .venv
+	pyenv virtualenv $(PROJECT_NAME)
 
 __reset:
-	rm -fr .venv
+	pyenv virtualenv-delete $(PROJECT_NAME)
 	rm -fr .python-version
 
-__hardreset: reset
-	rm -fr Pipfile Pipfile.lock
-
 __shell:
-	pipenv shell
-
-__requirements:
-	pipenv run pip freeze > src/requirements.txt
+	source `pyenv root`/versions/$(PROJECT_NAME)/bin/activate && bash
