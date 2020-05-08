@@ -1,4 +1,4 @@
-FROM docker.tjpr.net/python:3.8.2-buster
+FROM python:3.8.2-buster
 
 RUN groupadd --system user && useradd --system --gid user user
 
