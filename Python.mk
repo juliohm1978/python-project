@@ -2,7 +2,7 @@ __init:
 	mkdir -p src
 	echo -n $(PYENV_VERSION) > .python-version
 	pyenv install --skip-existing
-	pyenv virtualenv $(PROJECT_NAME)
+	pyenv virtualenv -f $(PROJECT_NAME)
 
 __reset:
 	pyenv virtualenv-delete $(PROJECT_NAME)
