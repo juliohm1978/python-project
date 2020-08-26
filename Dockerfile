@@ -1,13 +1,16 @@
-FROM python:3.8.2-buster
+ARG PYTHON_VERSION
+
+FROM python:${PYTHON_VERSION}
 
 RUN groupadd --system user && useradd --system --gid user user
 
-ADD --chown=user:user src/requirements.txt /opt/requirements.txt
+## add dependencies firset, cached in their own layer
+ADD --chown=user:user src/requirements.txt /opt/app/requirements.txt
+RUN pip install -r /opt/app/requirements.txt
 
-RUN pip install -r /opt/requirements.txt
-
-ADD --chown=user:user src /opt/
+## add the rest of the application files
+ADD --chown=user:user src /opt/app
 
 USER user
 
-ENTRYPOINT [ "/opt/myapp.py" ]
+ENTRYPOINT [ "/usr/local/bin/python", "/opt/app/main.py" ]

@@ -9,4 +9,7 @@ __reset:
 	rm -fr .python-version
 
 __shell:
-	source `pyenv root`/versions/$(PROJECT_NAME)/bin/activate && bash
+	PROJECT_NAME=$(PROJECT_NAME) bash --rcfile .bashrc
+
+__fish:
+	fish -C 'pyenv activate myapp'
